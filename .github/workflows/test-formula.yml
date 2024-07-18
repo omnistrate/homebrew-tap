@@ -1,0 +1,29 @@
+name: Test Homebrew Formula
+
+on:
+    pull_request:
+        branches:
+            - main
+    push:
+        branches:
+            - main
+
+jobs:
+    test_formula:
+        strategy:
+            matrix:
+                os: [macos-latest, ubuntu-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install Homebrew (Linux only)
+              if: runner.os == 'Linux'
+              run: |
+                  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+            - name: Install Dashlane CLI from rb file
+              run: brew install --build-from-source Formula/omnistrate-ctl.rb
+
+            - name: Run brew tests
+              run: brew test Formula/omnistrate-ctl.rb
