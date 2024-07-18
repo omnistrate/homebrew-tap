@@ -22,7 +22,19 @@ class OmnistrateCtl < Formula
     end
   
     def install
-      bin.install "omnistrate-ctl"
+        if OS.mac?
+            if Hardware::CPU.intel?
+                bin.install "omnistrate-ctl-darwin-amd64" => "omnistrate-ctl"
+            elsif Hardware::CPU.arm?
+                bin.install "omnistrate-ctl-darwin-arm64" => "omnistrate-ctl"
+            end
+        elsif OS.linux?
+            if Hardware::CPU.intel?
+                bin.install "omnistrate-ctl-linux-amd64" => "omnistrate-ctl"
+            elsif Hardware::CPU.arm?
+                bin.install "omnistrate-ctl-linux-arm64" => "omnistrate-ctl"
+            end
+        end
     end
   
     test do
