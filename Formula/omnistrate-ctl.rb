@@ -1,4 +1,4 @@
-class OmnistrateCTL < Formula
+class OmnistrateCtl < Formula
     desc "Omnistrate CTL command line tool"
     homepage "https://omnistrate.com"
     version "1.0.0"
