@@ -21,6 +21,7 @@ jobs:
               if: runner.os == 'Linux'
               run: |
                   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+                  echo /home/linuxbrew/.linuxbrew/bin >> $GITHUB_PATH
 
             - name: Install Dashlane CLI from rb file
               run: brew install --build-from-source Formula/omnistrate-ctl.rb
