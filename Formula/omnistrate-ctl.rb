@@ -41,7 +41,6 @@ class OmnistrateCtl < Formula
             end
         end
         bin.install_symlink "omnistrate-ctl" => "omctl"
-        generate_completions_from_executable(bin/"omnistrate-ctl", "completion")
     end
   
     test do
