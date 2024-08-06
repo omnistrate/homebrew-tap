@@ -40,10 +40,12 @@ class OmnistrateCtl < Formula
                 bin.install "omnistrate-ctl-linux-arm64" => "omnistrate-ctl"
             end
         end
+        bin.install_symlink "omnistrate-ctl" => "omctl"
     end
   
     test do
-      system "#{bin}/omnistrate-ctl", "--version"
+      assert_match "Omnistrate CTL #{version}", shell_output("#{bin}/omnistrate-ctl --version")
+      assert_match "Omnistrate CTL #{version}", shell_output("#{bin}/omctl --version")
     end
   end
   
