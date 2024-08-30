@@ -1,12 +1,12 @@
 class OmnistrateCtl < Formula
     desc "Omnistrate CTL command line tool"
     homepage "https://omnistrate.com"
-    version "v0.9.73"
+    version "v0.9.77"
     
-    sha_darwin_amd64 = "1904cbdd6a6265370bcbd1768e7da631dedcb7755bd8a882a7e59eaf0454f6df"
-    sha_darwin_arm64 = "29fdd1bfaa2d8eb12414f1661a8ab22b8606ffc08abf741bb94cd416a164486e"
-    sha_linux_amd64 = "acc2d3368bc73b3c55b7ccb9e56be8836f01e0935a2740bc237582751b0ed4de"
-    sha_linux_arm64 = "14ed2e6bedf6961c3d518d0e99ab3b6eed1d3df1cd6203eb3a2f70678e8d06ff"
+    sha_darwin_amd64 = "1447c234becb5d6c0aaa8fb28ffedc3b3e3190491f950290b9677b3ddefe25c0"
+    sha_darwin_arm64 = "56bf6b2255f5ac2cab1effb990855d62bf7f6888b4b948794eafbf4f7cb57b23"
+    sha_linux_amd64 = "5e4000e9b2ded50f0ef538e008f691775f6eb0686957da17b7de07a95815e3d6"
+    sha_linux_arm64 = "fdad7c3a63477b4a72ba707c0164497aa8a292c1fa99604ad9f7f3428f6d6b69"
 
     if OS.mac?
       if Hardware::CPU.intel?
