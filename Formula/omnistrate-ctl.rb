@@ -27,19 +27,18 @@ class OmnistrateCtl < Formula
     end
   
     def install
-        if OS.mac?
-            if Hardware::CPU.intel?
-                bin.install "omnistrate-ctl-darwin-amd64" => "omnistrate-ctl"
-            elsif Hardware::CPU.arm?
-                bin.install "omnistrate-ctl-darwin-arm64" => "omnistrate-ctl"
-            end
-        elsif OS.linux?
-            if Hardware::CPU.intel?
-                bin.install "omnistrate-ctl-linux-amd64" => "omnistrate-ctl"
-            elsif Hardware::CPU.arm?
-                bin.install "omnistrate-ctl-linux-arm64" => "omnistrate-ctl"
-            end
-        end
+        # Homebrew automatically extracts .tar.gz files
+        # The extracted binary will be available in the current directory
+        
+        # Determine the binary name based on platform
+        binary_name = if OS.mac?
+                        Hardware::CPU.intel? ? "omnistrate-ctl-darwin-amd64" : "omnistrate-ctl-darwin-arm64"
+                      elsif OS.linux?
+                        Hardware::CPU.intel? ? "omnistrate-ctl-linux-amd64" : "omnistrate-ctl-linux-arm64"
+                      end
+        
+        # Install the binary
+        bin.install binary_name => "omnistrate-ctl"
         bin.install_symlink "omnistrate-ctl" => "omctl"
     end
   
