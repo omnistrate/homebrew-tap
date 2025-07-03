@@ -10,18 +10,18 @@ class OmnistrateCtl < Formula
 
     if OS.mac?
       if Hardware::CPU.intel?
-        url "https://github.com/omnistrate/cli/releases/download/#{version}/omnistrate-ctl-darwin-amd64"
+        url "https://github.com/omnistrate-oss/omnistrate-ctl/releases/download/#{version}/omnistrate-ctl-darwin-amd64.tar.gz"
         sha256 sha_darwin_amd64
       elsif Hardware::CPU.arm?
-        url "https://github.com/omnistrate/cli/releases/download/#{version}/omnistrate-ctl-darwin-arm64"
+        url "https://github.com/omnistrate-oss/omnistrate-ctl/releases/download/#{version}/omnistrate-ctl-darwin-arm64.tar.gz"
         sha256 sha_darwin_arm64
       end
     elsif OS.linux?
       if Hardware::CPU.intel?
-        url "https://github.com/omnistrate/cli/releases/download/#{version}/omnistrate-ctl-linux-amd64"
+        url "https://github.com/omnistrate-oss/omnistrate-ctl/releases/download/#{version}/omnistrate-ctl-linux-amd64.tar.gz"
         sha256 sha_linux_amd64
       elsif Hardware::CPU.arm?
-        url "https://github.com/omnistrate/cli/releases/download/#{version}/omnistrate-ctl-linux-arm64"
+        url "https://github.com/omnistrate-oss/omnistrate-ctl/releases/download/#{version}/omnistrate-ctl-linux-arm64.tar.gz"
         sha256 sha_linux_arm64
       end
     end
