@@ -32,3 +32,6 @@ jobs:
 
             - name: Run brew tests
               run: brew test omnistrate/tap/omnistrate-ctl
+
+            - name: Run omnistrate-ctl version command
+              run: omnistrate-ctl --version
